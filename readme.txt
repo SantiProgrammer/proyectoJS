@@ -1,1 +1,1 @@
-Para iniciar el primer programa abre index.html.
+Para iniciar el simulador interactivo entra a la Simulador interactivo y habre el index.html.
