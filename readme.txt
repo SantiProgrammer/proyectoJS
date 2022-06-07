@@ -1,1 +1,0 @@
-Para ejecutar abrir simuladorinteractivo.html
