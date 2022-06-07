@@ -1,0 +1,10 @@
+/** Mapas **/
+
+$headings:(
+    h1:28px,
+    h2:50px,
+);
+
+$h1: map-get($headings, h1);
+
+$h2: map-get($headings, h2);

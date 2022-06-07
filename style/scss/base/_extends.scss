@@ -1,0 +1,42 @@
+/** Extends **/
+/* placeholder = % + nombre {} */
+
+%cursorpointer{
+    cursor: pointer;
+}
+
+%cusordefault{
+    cursor: default;
+}
+
+%cursornodrop{
+    cursor: no-drop;
+}
+
+//%mensaje{
+//    border-radius: 6px;
+//    padding: 20px 4px;
+ //   border:1px solid gray;
+//}
+
+//%flexbox {
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//}
+
+//.error{
+//background-color: red;
+//@extend %mensaje;
+//}
+
+//.ok{
+//background-color: green;
+//@extend %mensaje;
+//}
+
+//.caresel {
+//    @extend %flexbox;
+//}
+
+//@extend cursor: pointer;

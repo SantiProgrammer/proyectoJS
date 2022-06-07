@@ -1,0 +1,99 @@
+/** Keyframes **/
+  
+@keyframes menubarside {
+    from {
+      height:0;
+    }
+  
+    to {
+      height:69.5px;
+    }
+  }
+  
+  @keyframes menuitem {
+    from {
+      transform:translateY(-60px);
+      opacity: 0;
+    }
+  
+    to {
+      transform:translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes izquierda {
+    from {
+      transform:translatex(-100px);
+      opacity: 0;
+    }
+  
+    to {
+      transform:translatex(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes derecha {
+    from {
+      transform:translatex(100px);
+      opacity: 0;
+    }
+  
+    to {
+      transform:translatex(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  @keyframes abajo {
+    from {
+      transform:translatey(100px);
+      opacity: 0;
+    }
+  
+    to {
+      transform:translatey(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes arriba {
+    from {
+      transform:translatey(-100px);
+      opacity: 0;
+    }
+  
+    to {
+      transform:translatey(0px);
+      opacity: 1;
+    }
+  }
+
+  // form
+
+  @keyframes fadeInUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
