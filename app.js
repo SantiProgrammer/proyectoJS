@@ -101,3 +101,17 @@ do{
 }while(password != 'contraseña')
 alert('Acceso concedido!')
 }
+
+
+//Funcion Arrays
+
+function array(){
+    alert('Agrega 3 nombres al array')
+    const nombresArray = ["Nivardo","Maria Jose","Rene"];
+    for(i=1;i<=3;i++){
+        let nuevoNombre = prompt("Ingresa el nombre");
+        nombresArray.push(nuevoNombre)
+        alert(nuevoNombre + " agregado correctamente")
+    }
+    alert("Estos son los nombres agregados a la lista " + nombresArray + " un total de "+ nombresArray.length + " nombres")
+}
