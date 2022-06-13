@@ -134,7 +134,7 @@ function arrayFilter(){
     
     let filtrados = productos.filter(el => el.precio < precio);
     console.log(filtrados);
-    alert("Se mostro precios menores a " + (precio) + " en la cosola." );
+    alert("Se mostro precios menores a " + (precio) + " en la consola." );
 }
 
 //Array.find
@@ -151,5 +151,5 @@ function arrayFind(){
     //find "Pan"
     let producto = productos.find(el => el.nombre === busqueda);
     console.log(producto);
-    alert("Se mostro " + (busqueda) + " y su precio en la cosola.")
+    alert("Se mostro " + (busqueda) + " y su precio en la consola.")
 }
