@@ -115,3 +115,41 @@ function array(){
     }
     alert("Estos son los nombres agregados a la lista " + nombresArray + " un total de "+ nombresArray.length + " nombres")
 }
+
+
+//Array.filter
+
+function arrayFilter(){
+    alert("Busca precios entre 23 y 123234");
+    let precio = prompt("Buscar productos de precio menor a:");
+    let productos = [
+        {nombre: "Arroz", precio: 123},
+        {nombre: "Pan", precio: 1233},
+        {nombre: "Harina", precio: 1263},
+        {nombre: "Leche", precio: 23},
+        {nombre: "Cafe", precio: 123234},
+        ];
+
+    //filter ingresa el precio
+    
+    let filtrados = productos.filter(el => el.precio < precio);
+    console.log(filtrados);
+    alert("Se mostro precios menores a " + (precio) + " en la cosola." );
+}
+
+//Array.find
+function arrayFind(){
+    let busqueda = prompt("Busca productos como: Arroz,Pan,Harina,Leche o Cafe.");
+    let productos = [
+        {nombre: "Arroz", precio: 123},
+        {nombre: "Pan", precio: 1233},
+        {nombre: "Harina", precio: 1263},
+        {nombre: "Leche", precio: 23},
+        {nombre: "Cafe", precio: 123234},
+        ];
+
+    //find "Pan"
+    let producto = productos.find(el => el.nombre === busqueda);
+    console.log(producto);
+    alert("Se mostro " + (busqueda) + " y su precio en la cosola.")
+}

@@ -53,9 +53,13 @@ button{
         background-color: #373737;
         color: white;
         cursor: pointer ;
+        
     }
     
-    
+    .imgnew{
+width: 10%;
+margin-left: 5px;
+    }
 
 
 
