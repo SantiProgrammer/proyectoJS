@@ -181,7 +181,7 @@ function eliminarBoton(){
 
 //agregarBoton
 function agregarBoton(){
-    
+
     let boton = document.createElement("button");
     boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
     document.body.append(boton); 
