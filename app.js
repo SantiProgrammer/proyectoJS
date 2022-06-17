@@ -3,6 +3,15 @@
 
 alert("Hola Bienvenido a este Simulador interactivo");
 
+//Funcion Saludar al usuario
+
+function saludar(){
+    const nombre = prompt("Ingresa tu nombre");
+    const saludo = "Hola! " + nombre;
+    alert(saludo)
+}
+
+
 //Funcion promedio de calificaciones:
 
 function promedioAlumno(){
@@ -57,13 +66,6 @@ function calculaoraIva(){
     alert("El precio del pruducto con iva es: " + precioConIva)
 }
 
-//Funcion Saludar al usuario
-
-function saludar(){
-    const nombre = prompt("Ingresa tu nombre");
-    const saludo = "Hola! " + nombre;
-    alert(saludo)
-}
 
 
 //Funcion carrito de compras:
@@ -152,4 +154,35 @@ function arrayFind(){
     let producto = productos.find(el => el.nombre === busqueda);
     console.log(producto);
     alert("Se mostro " + (busqueda) + " y su precio en la consola.")
+}
+
+
+//botonDinamico()
+function botonDinamico(){
+    let contenedor = document.getElementById("botonDinamico");
+    let color = prompt("Ingresa si, si quieres cambiar el color");
+    
+    if(color === "si"){
+      contenedor.className = "container";
+      alert("Se cambio el color exitosamente!");
+    }else if(color !== "si"){
+        alert("No hubo ningun cambio");
+    }
+}
+
+
+//eliminarBoton
+function eliminarBoton(){
+
+    let restarBoton = document.getElementById("eliminarBoton");
+    restarBoton.remove();
+    alert("Boton eliminado correctamente!");
+}
+
+//agregarBoton
+function agregarBoton(){
+    
+    let boton = document.createElement("button");
+    boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
+    document.body.append(boton); 
 }
