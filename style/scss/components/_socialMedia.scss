@@ -1,0 +1,35 @@
+/** Social media **/
+
+.socialMedia {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 99;
+    flex-direction: row;
+}
+
+@media (max-width: 990px) {
+    .socialMedia {
+        position: initial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 10px 0;
+    }
+}
+
+.socialMedia a img {
+    width: 35px;
+    flex-direction: row;
+    margin: 0px 10px 0px 10px;
+    transition: all linear .1s;
+    -webkit-transition: all linear .1s;
+    -moz-transition: all linear .1s;
+    -ms-transition: all linear .1s;
+    -o-transition: all linear .1s;
+}
+
+.socialMedia a img:hover {
+    transform: scale(1.1);
+}
+

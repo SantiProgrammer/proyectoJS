@@ -4,6 +4,7 @@ section {
     height: 100vh;
     flex-direction: column;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.16); 
+    width: 100%;
 }
 
 #index {
@@ -14,10 +15,10 @@ section {
     background: linear-gradient(to top, #1f005e, #8E2DE2);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
-    min-height:460px;
+    min-height:1100px;
 }
 
-#about {
+#simuladorInteractivo{
     background: #8E2DE2;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
@@ -25,7 +26,7 @@ section {
     background: linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
-    min-height: 600px;
+    min-height: 1150px;
 }
 
 #certificate {

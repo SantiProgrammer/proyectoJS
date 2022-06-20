@@ -1,0 +1,84 @@
+body{
+    background-attachment: fixed;
+    color: whitesmoke;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#botones-box{
+    z-index: 9;
+}
+
+.consigna{
+    font-size: 15px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-family: arial;
+    font-size: 15px;
+    
+}
+
+h3{
+    font-family: arial;
+    font-size: 20px;
+}
+
+h2 img{
+    width: 20px;
+    margin: 5px;
+}
+
+.boton{
+    display: flex;
+    align-content: center;
+    color: black;
+    background-color: white;
+    width: 250px;
+    height: 30px;
+    justify-content: center;
+    font-size: 18px;
+    margin: 3px;
+    border-radius: 15px;
+        
+    }
+    
+    .boton:hover{
+        background-color: #373737;
+        color: white;
+        cursor: pointer ;
+        
+    }
+    
+    .imgnew{
+width: 10%;
+margin-left: 5px;
+    }
+
+
+
+.wave{
+    width: 100px;
+}
+
+.container{
+    display: flex;
+    align-content: center;
+    width: 250px;
+    height: 30px;
+    justify-content: center;
+    font-size: 18px;
+    margin: 3px;
+    border-radius: 15px;
+    background-color: lime;
+    color: black;
+    border: solid red 2px;
+}

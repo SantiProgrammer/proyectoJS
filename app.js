@@ -1,11 +1,12 @@
 /**  Simulador interactivo **/
 
 
-alert("Hola Bienvenido a este Simulador interactivo");
 
 //Funcion Saludar al usuario
 
-function saludar(){
+const saludar = document.getElementById("saludo");
+saludar.addEventListener("click", respuestaClick)
+function respuestaClick(){
     const nombre = prompt("Ingresa tu nombre");
     const saludo = "Hola! " + nombre;
     alert(saludo)
@@ -14,6 +15,8 @@ function saludar(){
 
 //Funcion promedio de calificaciones:
 
+const promedio = document.getElementById("promedioAlumno");
+promedio.addEventListener("mouseup", promedioAlumno)
 function promedioAlumno(){
     alert('Ingresa tus calificaciones para obtener tu promedio.');
     const calificación1 = parseInt(prompt ("Ingrese su calificación de HTML:"));
@@ -30,6 +33,9 @@ function promedioAlumno(){
 
 
 //Funcion Calculadora con switch:
+
+const botonCalculadora = document.getElementById("botonCalculadora");
+botonCalculadora.addEventListener("click",calculadora)
 
 function calculadora(primernum, segundonum, operacion) {
     switch (operacion) {
@@ -49,17 +55,19 @@ function calculadora(primernum, segundonum, operacion) {
             break;
     }
 
-let pregunta1 = Number(prompt("ingresa el primer numero"))
-let operadorMat = prompt("Ingresa el operador +,-,* ó /.")
-let pregunta2 = Number(prompt("ingresa el segundo numero"));
+        let pregunta1 = Number(prompt("ingresa el primer numero"))
+        let operadorMat = prompt("Ingresa el operador +,-,* ó /.")
+        let pregunta2 = Number(prompt("ingresa el segundo numero"));
+        alert(calculadora(pregunta1,pregunta2,operadorMat))
+    }
 
-
-alert(calculadora(pregunta1,pregunta2,operadorMat))
-}
 
 //Funcion calculadora iva:
 
-function calculaoraIva(){
+const botonCalculadoraIva = document.getElementById("botonCalculadoraIva");
+botonCalculadoraIva.addEventListener("click", calculadoraIva)
+
+function calculadoraIva(){
     const precioDelProducto = Number(prompt("Ingrese el precio del producto"));
     const iva = 1.15;
     const precioConIva = precioDelProducto * iva;
@@ -69,6 +77,9 @@ function calculaoraIva(){
 
 
 //Funcion carrito de compras:
+
+const botonCarrito = document.getElementById("botonCarrito");
+botonCarrito.addEventListener("click", carrito)
 
 function carrito(){
     alert("Esta función muestra los 3 productos que argeges en la consola." )
@@ -81,6 +92,9 @@ function carrito(){
 }
 
 //Funcion password:
+
+const botonCicloWhile = document.getElementById("botonCicloWhile");
+botonCicloWhile.addEventListener("click", cicloWhile)
 
 function cicloWhile(){
 alert('Ciclo while...');
@@ -95,6 +109,9 @@ alert('Acceso concedido!')
 
 //Funcion do while:
 
+const botonDoWhile = document.getElementById("botonDoWhile");
+botonDoWhile.addEventListener("click", doWhile)
+
 function doWhile(){
 alert('Ciclo do while...');
 alert('Recodatorio de contraseña: contraseña');
@@ -106,6 +123,9 @@ alert('Acceso concedido!')
 
 
 //Funcion Arrays
+
+const botonArray = document.getElementById("botonArray");
+botonArray.addEventListener("click", array);
 
 function array(){
     alert('Agrega 3 nombres al array')
@@ -120,6 +140,9 @@ function array(){
 
 
 //Array.filter
+
+const botonArrayFilter = document.getElementById("botonArrayFilter");
+botonArrayFilter.addEventListener("click", arrayFilter);
 
 function arrayFilter(){
     alert("Busca precios entre 23 y 123234");
@@ -138,6 +161,9 @@ function arrayFilter(){
     console.log(filtrados);
     alert("Se mostro precios menores a " + (precio) + " en la consola." );
 }
+
+const botonArrayFind = document.getElementById("botonArrayFind");
+botonArrayFind.addEventListener("click", arrayFind);
 
 //Array.find
 function arrayFind(){
@@ -158,12 +184,16 @@ function arrayFind(){
 
 
 //botonDinamico()
-function botonDinamico(){
-    let contenedor = document.getElementById("botonDinamico");
+
+let botonDinamico = document.getElementById("botonDinamico");
+botonDinamico.addEventListener("click" ,cambiaColor)
+
+function cambiaColor(){
+
     let color = prompt("Ingresa si, si quieres cambiar el color");
     
     if(color === "si"){
-      contenedor.className = "container";
+        botonDinamico.className = "container";
       alert("Se cambio el color exitosamente!");
     }else if(color !== "si"){
         alert("No hubo ningun cambio");
@@ -172,17 +202,25 @@ function botonDinamico(){
 
 
 //eliminarBoton
+
+const botonEliminarBoton = document.getElementById("botonEliminarBoton");
+botonEliminarBoton.addEventListener("click" , eliminarBoton)
+
 function eliminarBoton(){
 
-    let restarBoton = document.getElementById("eliminarBoton");
-    restarBoton.remove();
+    botonEliminarBoton.remove();
     alert("Boton eliminado correctamente!");
 }
 
 //agregarBoton
+
+const botonAgregarBoton = document.getElementById("botonAgregarBoton");
+botonAgregarBoton.addEventListener("click" , agregarBoton);
+
 function agregarBoton(){
 
-    let boton = document.createElement("button");
+    const boton = document.createElement("button");
+    boton.className = "boton";
     boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
-    document.body.append(boton); 
+    document.body.appendChild(boton, "botones-box"); 
 }
