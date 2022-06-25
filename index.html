@@ -28,7 +28,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200;1,900&display=swap" rel="stylesheet" />
     </head>
 <body>
-   <!-- Menu -->
+
+   <!-- nav -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed menu">
     <div class="container-fluid justify-content-end">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,25 +37,43 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
+        <!-- Site theme Dark/Light -->
+          <li>
+            <div class="site-theme">
+              <button id="lightTheme" ><img class="theme-ico" src="./imagenes/sol.png" alt="lightTheme"></button>
+              <button id="darkTheme" ><img class="theme-ico" src="./imagenes/luna.png" alt="darkTheme"></button>
+            </div>
+          </li>
           <li class="nav-item d-flex justify-content-center">
             <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
           </li>
           <li class="nav-item d-flex justify-content-center">
-            <a class="nav-link " href="./productos.html">Tienda</a>
+            <a class="nav-link " href="./tienda.html">Tienda</a>
           </li>
           <li class="nav-item d-flex justify-content-center">
             <a class="nav-link" href="./simulador.html">Simulado Interactivo</a>
           </li>
+          <!-- offCanvas button-->
           <li>
-            <div class="socialMedia">
-              <a href="#" target="_black"><img src="https://cdn-icons-png.flaticon.com/512/3523/3523887.png" title="Carrito de compras" alt="Carrito logo"></a>
-             <a href="#" target="_black"><img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/344/external-user-advertising-kiranshastry-lineal-color-kiranshastry-4.png" title="Cuenta de usuario" alt="User Logo"></a>
+            <div class="carrito">
+              <button class="" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="https://cdn-icons-png.flaticon.com/512/3523/3523887.png" title="Carrito de compras" alt="Carrito logo"><span id="contadorCarrito">0</span></button>
            </div>
          </li>
-      </div>
+        </ul>
     </div>
-  </nav>  
-    <head>
+  </nav>
+    <header>
+      <!-- Off canvas -->
+      <div class="offcanvas offcanvas-end my-canvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          ...
+        </div>
+      </div>
+    </header>
         <!-- index -->
         <section id="index">
             <div class="colorTitle">
@@ -70,26 +89,7 @@
                 <span>e</span>
             </div>
                 <h1><span>{ </span>Proyecto Java Script<span>; }</span></h1>
-                <!-- particles wallpaper -->
-                <div class="animation-wrapper">
-                    <div class="particle particle-1">.</div>
-                    <div class="particle particle-2"></div>
-                    <div class="particle particle-3"></div>
-                    <div class="particle particle-4"></div>
-                  </div>     
         </section>
-    </head>
-        <!-- Start: Copyright 2022 TraceMyIP.org Service Code (034010-04072022)- DO NOT MODIFY //-->
-        <div id="elemID031021" style="line-height: 16px; text-align: center; position: relative; z-index: 100000;">
-            <script
-                type="text/javascript"
-                src="https://s2.tracemyip.org/tracker/lgUrl.php?random='+Math.random()+'&amp;stlVar2=1500~1649302651~14*2~0F5999*F7FFE6*537899*000000~1*1*1*1*1&amp;rgtype=4684NR-IPIB&amp;pidnVar2=96941&amp;prtVar2=11&amp;scvVar2=12"
-            ></script>
-            <noscript>
-                <a href="https://www.tracemyip.org/"><img src="https://s2.tracemyip.org/tracker/1500~1649302651~14*2~0F5999*F7FFE6*537899*000000~1*1*1*1*1/4684NR-IPIB/96941/11/12/ans/" alt="MY IP ADDRESS" style="border: 0px;" /></a>
-            </noscript>
-        </div>
-        <!-- End: TraceMyIP.org Service Code //-->
         <!-- Bootstrap Separate -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>

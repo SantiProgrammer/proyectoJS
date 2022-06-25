@@ -1,21 +1,19 @@
 /* Base */
-@import "../scss/base/reset";
-@import "../scss/base/body";
 @import "../scss/base/variables";
+@import "../scss/base/body";
 @import "../scss/base/keyframes";
 @import "../scss/base/mixins";
 @import "../scss/base/extends";
 @import "../scss/base/mapas";
+@import "../scss/base/siteTheme";
 
 /* Componentes */
-
 @import "../scss/components/sections";
 @import "../scss/components/navbar";
-@import "../scss/components/about";
-@import "../scss/components/simulador";
-@import "../scss/components/socialMedia";
 @import "../scss/components/index";
-@import "../scss/components/productos";
-@import "../scss/components/portfolio";
-@import "../scss/components/TrackID";
-@import "../scss/components/wallpaper"
+@import "../scss/components/carrito";
+@import "../scss/components/tienda";
+@import "../scss/components/simulador";
+
+
+

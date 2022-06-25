@@ -1,0 +1,32 @@
+/***** Site theme *****/
+
+.site-theme{
+    z-index: 999;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.theme-ico{
+    width: 40px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+}
+
+.theme-ico:hover{
+transform: scale(1.1);
+}
+
+/* Dark theme */
+
+
+
+/* Light theme */
+
+button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+

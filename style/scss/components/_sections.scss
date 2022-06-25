@@ -1,9 +1,7 @@
 section {
     @include flexbox;
     background-size: cover;
-    height: 100vh;
     flex-direction: column;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.16); 
     width: 100%;
 }
 
@@ -15,31 +13,10 @@ section {
     background: linear-gradient(to top, #1f005e, #8E2DE2);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
+    height: 100vh;
 }
 
-#simuladorInteractivo{
-    background: #8E2DE2;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
-    min-height: 1000px;
-}
-
-#certificate {
-    background: #6441A5;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(#0f0c29, #302b63, #24243e);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(#0f0c29, #302b63, #24243e);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
-    
-}
-
-#skills {
+#tienda{
     background: #AAFFA9;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #11FFBD, #AAFFA9);
@@ -47,50 +24,19 @@ section {
     background: linear-gradient(to bottom, #4fbeff, #AAFFA9);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
-    min-height: 1150px;
   }
   
-  @media (min-width: 600px) {
-    #skills {
-      min-height: 560px;
-    }
-  }
 
-  @media (min-width: 1024px) {
-    #skills {
-      min-height: 800px;
-    }
-  }
-
-#portfolio {
-    background: #00d2ff;
+  #simuladorInteractivo{
+    background: #8E2DE2;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #001a3e, #00d2ff);
+    background: -webkit-linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #001a3e, #00d2ff);
+    background: linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
-    min-height:460px;
-}
-
-#contact {
-    background: #6441A5;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(#0f0c29, #302b63, #24243e);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(#0f0c29, #302b63, #24243e);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
+    height: 100vh;
 }
 
 
 
-// #contact {
-//     background: #ee4049;
-//     /* fallback for old browsers */
-//     background: -webkit-linear-gradient(to top, #ffb007, #ee4049);
-//     /* Chrome 10-25, Safari 5.1-6 */
-//     background: linear-gradient(to top, #ffb007, #ee4049);
-//     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-//     background-attachment: fixed;
-// }

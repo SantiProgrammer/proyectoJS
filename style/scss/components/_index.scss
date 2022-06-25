@@ -22,7 +22,7 @@
 .colorTitle span {
     font-family: 'poppins';
     transition: all .3s;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
     position: relative;
     cursor: pointer;
@@ -39,13 +39,13 @@
 
 @media (min-width:768px) {
     .colorTitle span {
-        font-size: 80px;
+        font-size: 50px;
     }
 }
 
 @media (min-width:1024px) {
     .colorTitle span {
-        font-size: 140px;
+        font-size: 60px;
     }
 }
 
@@ -186,7 +186,7 @@
 /** Fin Color title**/
 
 h1 {
-    font-size: $h1;
+    font-size: 50px;
     text-align: center;
     color: $font-color;
     font-family: 'Poppins', arial;
@@ -197,13 +197,13 @@ h1 {
 
 @media (min-width:768px) {
     .frontEndTitle h1 {
-        font-size: 50px;
+        font-size: 30px;
     }
 }
 
 @media (min-width:1024px) {
     h1 {
-        font-size: 70px;
+        font-size: 30px;
     }
 }
 

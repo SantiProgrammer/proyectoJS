@@ -3,8 +3,33 @@
 /** Font color **/
 $font-color: rgb(255, 255, 255);
 
-/** Borde de color de slide about**/
-$border-color: turquoise;
+// variable colores 
 
-// $primary_color: #fafafa;
-// $secondary-color:rgb(223, 233, 233);
+$botonColor: rgba(0, 0, 255, 0.5);
+
+
+$colores:
+#747c58,
+rgb(243, 243, 225),
+rgb(219, 206, 161),
+#a3a59e77,
+#4f69b1,
+#4f69b1,
+#e9e5d5,
+#575253;
+
+
+
+
+// mixins
+
+@mixin ubicacion ($tipo, $fila, $columna, $direction) {
+  display: $tipo;
+  justify-content: $fila;
+  align-items: $columna;
+  flex-direction: $direction;
+}
+
+.disclaimer { 
+  visibility: hidden; 
+}
