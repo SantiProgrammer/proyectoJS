@@ -9,7 +9,12 @@ saludar.addEventListener("click", respuestaClick)
 function respuestaClick(){
     const nombre = prompt("Ingresa tu nombre");
     const saludo = "Hola! " + nombre;
-    alert(saludo)
+    Swal.fire(
+    saludo,
+    'bonito dia! 😎',
+    'success'
+);
+    
 }
 
 
@@ -209,18 +214,27 @@ botonEliminarBoton.addEventListener("click" , eliminarBoton)
 function eliminarBoton(){
 
     botonEliminarBoton.remove();
-    alert("Boton eliminado correctamente!");
+Swal.fire(
+  'Good job!',
+  'Boton eliminado correctamente!',
+  'success'
+);
+
 }
 
 //agregarBoton
+
+const botonesBox = document.getElementById("botones-box");
 
 const botonAgregarBoton = document.getElementById("botonAgregarBoton");
 botonAgregarBoton.addEventListener("click" , agregarBoton);
 
 function agregarBoton(){
-
     const boton = document.createElement("button");
     boton.className = "boton";
     boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
-    document.body.appendChild(boton, "botones-box"); 
+    botonesBox.appendChild(boton);
 }
+
+
+

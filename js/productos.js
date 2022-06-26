@@ -46,13 +46,6 @@ const cantidadTotal = document.getElementById('cantidadTotal')
 /* Array Carrito */
 let carrito = [];
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'))
-    actualizarCarrito()
-  }
-})
-
 /* Crear productos en el DOM */
 
 stockProductos.forEach((producto) => {
@@ -154,3 +147,11 @@ const agregarAlCarrito = (productoId) => {
     totalPrecioCarrito.innerText = carrito.reduce((total, elemento) => total + elemento.totalPrecio, 0);
     totalCarrito = carrito.reduce((total, elemento) => total + elemento.totalPrecio, 0);
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito') ) {
+      carrito = JSON.parse(localStorage.getItem('carrito'))
+      actualizarCarrito()
+    }
+  })
+
