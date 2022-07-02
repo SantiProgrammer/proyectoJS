@@ -198,7 +198,7 @@ function cambiaColor(){
     let color = prompt("Ingresa si, si quieres cambiar el color");
     
     if(color === "si"){
-        botonDinamico.className = "container";
+        botonDinamico.className = "container1";
       alert("Se cambio el color exitosamente!");
     }else if(color !== "si"){
         alert("No hubo ningun cambio");
@@ -209,11 +209,10 @@ function cambiaColor(){
 //eliminarBoton
 
 const botonEliminarBoton = document.getElementById("botonEliminarBoton");
-botonEliminarBoton.addEventListener("click" , eliminarBoton)
+botonEliminarBoton.addEventListener("click" , eliminarBoton);
 
 function eliminarBoton(){
-
-    botonEliminarBoton.remove();
+botonEliminarBoton.remove();
 Swal.fire(
   'Good job!',
   'Boton eliminado correctamente!',
@@ -232,9 +231,11 @@ botonAgregarBoton.addEventListener("click" , agregarBoton);
 function agregarBoton(){
     const boton = document.createElement("button");
     boton.className = "boton";
+    boton.setAttribute("id", "botonEliminarBoton")
     boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
     botonesBox.appendChild(boton);
 }
+botonEliminarBoton.addEventListener("click" , eliminarBoton);
 
 
 
