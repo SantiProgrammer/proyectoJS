@@ -21,7 +21,7 @@ class Producto {
 // array de stock de productos
 const stockProductos = [];
 
-//Pusheo los productos al Stock
+//Productos disponibles en la tienda
 stockProductos.push(new Producto("01", "Leche", 20, './imagenes/caja-de-leche.png'));
 stockProductos.push(new Producto("02", "Harina", 15, './imagenes/harina.png'));
 stockProductos.push(new Producto("03", "Huevo", 70, './imagenes/huevo.png'));
