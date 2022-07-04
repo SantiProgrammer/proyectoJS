@@ -30,9 +30,17 @@ function promedioAlumno(){
     const sumaDeCalificaciones = calificación1 + calificación2 + calificación3;
     const promedio = sumaDeCalificaciones / 3;
     if(promedio >= 6){
-        alert("Felicitaciones! aprobaste con: " + promedio);
+        Swal.fire({
+            icon: 'success',
+            title: 'Felicidades!',
+            text: 'Aprobaste con: ' + promedio,
+          })
     }else{
-        alert("Reprobaste tu peromedio es menor a 6")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Reprobaste tu peromedio es menor a 6',
+          })
 }
 }
 
@@ -76,7 +84,12 @@ function calculadoraIva(){
     const precioDelProducto = Number(prompt("Ingrese el precio del producto"));
     const iva = 1.15;
     const precioConIva = precioDelProducto * iva;
-    alert("El precio del pruducto con iva es: " + precioConIva)
+    Swal.fire({
+        icon: 'success',
+        title: precioConIva ,
+        text: 'es el precio con iva!',
+      })
+
 }
 
 
@@ -108,7 +121,11 @@ let password = '';
 while(password != 'contraseña'){
     password = prompt('Introduzca su contraseña:')
 }
-alert('Acceso concedido!')
+Swal.fire({
+    icon: 'success',
+    title: 'Acceso concedido!',
+    text: 'Bienvenido',
+  })
 }
 
 
@@ -123,7 +140,11 @@ alert('Recodatorio de contraseña: contraseña');
 do{
     password = prompt('Introduzca su contraseña:')
 }while(password != 'contraseña')
-alert('Acceso concedido!')
+Swal.fire({
+    icon: 'success',
+    title: 'Acceso concedido!',
+    text: 'Bienvenido',
+  })
 }
 
 
@@ -199,9 +220,16 @@ function cambiaColor(){
     
     if(color === "si"){
         botonDinamico.className = "container1";
-      alert("Se cambio el color exitosamente!");
+        Swal.fire({
+            icon: 'success',
+            title: 'Se cambio el color exitosamente!',
+          })
     }else if(color !== "si"){
-        alert("No hubo ningun cambio");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No hubo ningun cambio',
+          })
     }
 }
 
@@ -214,7 +242,7 @@ botonEliminarBoton.addEventListener("click" , eliminarBoton);
 function eliminarBoton(){
 botonEliminarBoton.remove();
 Swal.fire(
-  'Good job!',
+  'Eliminado!',
   'Boton eliminado correctamente!',
   'success'
 );
@@ -234,7 +262,13 @@ function agregarBoton(){
     boton.setAttribute("id", "botonEliminarBoton")
     boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
     botonesBox.appendChild(boton);
+    Swal.fire({
+        icon: 'success',
+        title: 'Agregado',
+        text:'Boton agregado correctamente',
+      });
 }
+
 botonEliminarBoton.addEventListener("click" , eliminarBoton);
 
 

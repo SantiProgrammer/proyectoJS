@@ -30,6 +30,7 @@ openSesion.addEventListener("click", (e) => {
    <p class="botonLogin">${usuario.value.toUpperCase()} |</p>`
 
    nombreLogeado.appendChild(bienvenido);
+   
   }
 
 

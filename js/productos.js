@@ -79,8 +79,9 @@ const agregarAlCarrito = (productoId) => {
       let newProducto = stockProductos.find((producto) => producto.id === productoId);
       carrito.push(newProducto);
       carrito[carrito.length - 1].actualizarPrecioTotal();
-  
+
     }
+    
     actualizarCarrito()
   }
   
