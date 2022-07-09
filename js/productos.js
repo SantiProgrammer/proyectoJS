@@ -1,3 +1,31 @@
+/* fetch con await / renderizar productos en el DOM */
+
+const pedirDatos = async () => {
+  const respuesta = await fetch("./json/data.json");
+  const stock = await respuesta.json();
+/*   return stock */
+
+  stock.forEach((producto) => {
+    let card = document.createElement("div");
+    card.innerHTML =  `
+    <figure class=" productos__card card m-2">
+          <img src="${producto.image}" class="card-img-top">
+          <p class="card-title">${producto.nombre} </p>
+          <p class="card-text">$ ${producto.precio}</p>
+          <button class="btn btn-primary" id="p${producto.id}">Agregar al Carrito</button>
+    </figure> 
+    `;
+    contenedorProductos.appendChild(card);
+
+    const boton = document.getElementById(`p${producto.id}`)
+    boton.addEventListener("click", () => {
+      agregarAlCarrito(producto.id)
+    })
+  });
+};
+
+pedirDatos();
+
 /* constructor clase Producto */
 
 class Producto {
@@ -7,11 +35,11 @@ class Producto {
       this.precio = precio;
       this.img = img;
       this.cantidad = 1;
-      this.inPortfolio = false;
+      this.enCarrito = false;
     }
-    addToPorfolio() {
+    sumarProducto() {
       this.cantidad++;
-      this.inPortfolio = true;
+      this.enCarrito = true;
     }
     actualizarPrecioTotal() {
       this.totalPrecio = this.precio * this.cantidad;
@@ -19,20 +47,35 @@ class Producto {
   }
 
 // array de stock de productos
-const stockProductos = [];
+const prueba = async () => {
+    const stock1 = await pedirDatos();
+
+    stock1 = stock1.map( elemento => {
+      return new Producto (
+        elemento.id,
+        elemento.nombre,
+        elemento.precio,
+        elemento.image,
+        elemento.cantidad,
+        elemento.enCarrito
+        )
+    })
+}
+
+/* console.log(stock1); */
 
 //Productos disponibles en la tienda
-stockProductos.push(new Producto("01", "Leche", 20, './imagenes/caja-de-leche.png'));
-stockProductos.push(new Producto("02", "Harina", 15, './imagenes/harina.png'));
-stockProductos.push(new Producto("03", "Huevo", 70, './imagenes/huevo.png'));
-stockProductos.push(new Producto("04", "Cereal", 80, './imagenes/cereal.png'));
-stockProductos.push(new Producto("05", "Avena", 10, './imagenes/gachas-de-avena.png'));
-stockProductos.push(new Producto("06", "Cafe", 150, './imagenes/bolsa-de-cafe.png'));
-stockProductos.push(new Producto("07", "Hielos", 50, './imagenes/caja-de-hielo.png'));
-stockProductos.push(new Producto("08", "Chocolate", 30, './imagenes/barra-de-chocolate.png'));
-stockProductos.push(new Producto("09", "Pastel", 290, './imagenes/cup-cake.png'));
-stockProductos.push(new Producto("10", "Pasta", 110, './imagenes/spaguetti.png'));
-stockProductos.push(new Producto("11", "Galletas", 25, './imagenes/horneando.png'));
+/* stock1.push(new Producto(${producto.id}));
+stock1.push(new Producto("2", "Harina", 15, './imagenes/harina.png'));
+stock1.push(new Producto("3", "Huevo", 70, './imagenes/huevo.png'));
+stock1.push(new Producto("4", "Cereal", 80, './imagenes/cereal.png'));
+stock1.push(new Producto("5", "Avena", 10, './imagenes/gachas-de-avena.png'));
+stock1.push(new Producto("6", "Cafe", 150, './imagenes/bolsa-de-cafe.png'));
+stock1.push(new Producto("7", "Hielos", 50, './imagenes/caja-de-hielo.png'));
+stock1.push(new Producto("8", "Chocolate", 30, './imagenes/barra-de-chocolate.png'));
+stock1.push(new Producto("9", "Pastel", 290, './imagenes/cup-cake.png'));
+stock1.push(new Producto("10", "Pasta", 110, './imagenes/spaguetti.png'));
+stock1.push(new Producto("11", "Galletas", 25, './imagenes/horneando.png')); */
 
 /* declaracion constantes getElementById */
 const contenedorProductos = document.getElementById("contenedor-productos")
@@ -46,51 +89,35 @@ const cantidadTotal = document.getElementById('cantidadTotal')
 /* Array Carrito */
 let carrito = [];
 
-/* Crear productos en el DOM */
 
-stockProductos.forEach((producto) => {
-  let card = document.createElement("div")
-  card.innerHTML = `
-  <figure class="card m-2">
-        <img src="${producto.img}" class="card-img-top" alt="${producto.nombre}">
-        <p class="card-title">${producto.nombre} </p>
-        <p class="card-text">$ ${producto.precio}</p>
-        <button class="btn btn-primary" id="p${producto.id}">Agregar al Carrito</button>
-  </figure> 
-  `
-  contenedorProductos.appendChild(card);
-
-  const boton = document.getElementById(`p${producto.id}`)
-  boton.addEventListener("click", () => {
-    agregarAlCarrito(producto.id)
-  })
-
-})
+  
 
 // Funcion argegar al carrito
 
 const agregarAlCarrito = (productoId) => {
-    const item = carrito.find((producto) => producto.id === productoId);
-    if (item) {
-      let index = carrito.findIndex((producto) => producto.id === item.id);
-      carrito[index].addToPorfolio();
-      carrito[index].actualizarPrecioTotal();
-    } else {
-      let newProducto = stockProductos.find((producto) => producto.id === productoId);
-      carrito.push(newProducto);
-      carrito[carrito.length - 1].actualizarPrecioTotal();
+  const item = carrito.find((producto) => producto.id === productoId);
+  if (item) {
+    let index = carrito.findIndex((producto) => producto.id === item.id);
+    carrito[index].sumarProducto();
+    carrito[index].actualizarPrecioTotal();
+  } else {
+    let newProducto = stock1.find((producto) => producto.id === productoId);
+    carrito.push(newProducto);
+    carrito[carrito.length - 1].actualizarPrecioTotal();
 
-    }
-    
-    actualizarCarrito()
   }
   
-  const deleteCart = (productoId) => {
-    const item = carrito.find((producto) => producto.id === productoId);
-    const index = carrito.indexOf(item);
-    carrito.splice(index, 1);
-    actualizarCarrito()
-  }
+  actualizarCarrito()
+}
+
+/* Elinimar producto */
+
+const deleteCart = (productoId) => {
+  const item = carrito.find((producto) => producto.id === productoId);
+  const index = carrito.indexOf(item);
+  carrito.splice(index, 1);
+  actualizarCarrito()
+}
 
   // Funcion vaciar al carrito
   
@@ -105,6 +132,8 @@ const agregarAlCarrito = (productoId) => {
     carrito.length = 0;
     actualizarCarrito()
   })
+
+  /* funcion actualizar carrito */
   
   const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = ""
@@ -115,7 +144,7 @@ const agregarAlCarrito = (productoId) => {
       <figure class="card mb-4">
         <div class="row g-0">
             <div class="col-md-3 img-carrito">
-                <img src="${producto.img}" class="img-fluid rounded-start" alt="${producto.nombre}">
+                <img src="${producto.image}" class="img-fluid rounded-start" alt="${producto.nombre}">
             </div>
             <div class="col-md-6">
                <div class="card-detalle">
