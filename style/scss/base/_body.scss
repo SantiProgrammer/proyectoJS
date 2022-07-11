@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
     background: #8E2DE2;
     background-attachment: fixed;

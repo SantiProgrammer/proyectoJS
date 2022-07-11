@@ -38,7 +38,7 @@
   }
  
   .productos__card {
-    max-width: 1200px;
+    max-width: 1000px;
  
     @include ubicacion(flex, center, center, row);
     flex-wrap: wrap;
@@ -98,12 +98,13 @@
 
 .iniciar-sesion{
 position: absolute;
-right: 70px;
+left: 10px;
 }
 
 .iniciar-sesion p{
   font-size: 12px;
   padding: 13px;
+  margin: 0;
   cursor: pointer;
 }
 

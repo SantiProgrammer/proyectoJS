@@ -6,9 +6,7 @@
     flex-direction: row;
     padding: 10px;
     animation: izquierda 1s 1 backwards linear .3s;
-    z-index: 9;
     transition: all .5s;
-    z-index: 999;
 }
 
 .colorTitle:hover{
@@ -190,7 +188,6 @@ h1 {
     text-align: center;
     color: $font-color;
     font-family: 'Poppins', arial;
-    z-index: 9;
     animation: derecha 1s 1 backwards linear .3s;
     @extend %cursorpointer;
 }

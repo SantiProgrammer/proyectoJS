@@ -97,9 +97,9 @@ function calculadoraIva(){
 //Funcion carrito de compras:
 
 const botonCarrito = document.getElementById("botonCarrito");
-botonCarrito.addEventListener("click", carrito)
+botonCarrito.addEventListener("click", agregarCarrito)
 
-function carrito(){
+function agregarCarrito(){
     alert("Esta función muestra los 3 productos que argeges en la consola." )
     for(i=1;i<=3;i++){
         let producto = prompt("Ingresa el nombre del producto");

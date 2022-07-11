@@ -22,12 +22,17 @@ openSesion.addEventListener("click", (e) => {
 
   
   function logeado() {
-   alert(`Hola! ${usuario.value}`);
+   Swal.fire({
+      icon: 'success',
+      title: `Hola! ${usuario.value}`,
+      text: 'Bienvenido',
+
+    }) 
    sesion.classList.remove("login--show");
    botonInicio.classList.add("login--borrar");
    let bienvenido = document.createElement("div")
    bienvenido.innerHTML = `
-   <p class="botonLogin">${usuario.value.toUpperCase()} |</p>`
+   <p class="botonLogin">${usuario.value.toUpperCase()}</p>`
 
    nombreLogeado.appendChild(bienvenido);
    
@@ -37,23 +42,17 @@ openSesion.addEventListener("click", (e) => {
 
   // Validacion de sesion
   
-  botonAcceder.addEventListener("click", () => {  
+ botonAcceder.addEventListener("click", () => {  
      let usuario = document.querySelector('#usuario').value;
      let contraseña = document.querySelector('#password').value;
 
-    (usuario.toUpperCase() == "SANTIAGO") && (contraseña === "12345") ? logeado() : 
-    alert("Usuario o contraseña incorrecta, vuelva a intentarlo") });
+    (usuario.toUpperCase() == "SANTIAGO") && (contraseña === "contraseña") ? logeado() : 
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'El usuario o contraseña son incorrectos!',
 
+    }) 
+   });
 
-    
-    // Funcion localStorage
-
-/*     localStorage.setItem('login', JSON.stringify(logeado))
-
-    document.addEventListener('DOMContentLoaded', () => {
-      if(localStorage.getItem('login')){
-         logeado = JSON.parse(localStorage.getItem('login'))
-      }
-    })
-   */
 
