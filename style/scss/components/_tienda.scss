@@ -108,4 +108,30 @@ left: 10px;
   cursor: pointer;
 }
 
+.card-title{
+  body.dark &{
+    color: white;
+  }
+}
+
+.productos__card div .card .card-text {
+  body.dark &{
+    color: white;
+  }
+}
+
+
+.productos__card div .card .btn:hover {
+    color: white;
+    transform: scale(1.05);
+}
+.productos__card div .card .btn {
+  body.dark &{
+    background-color: #302b63;
+    color: white;
+  }
+}
+
+
+
   /* ------------------------------ fin tienda ----------------------------- */

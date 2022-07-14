@@ -134,6 +134,7 @@ pagarTotal.addEventListener('click', () => {
       popup: 'animate__animated animate__fadeOutUp'
     },
     imageUrl: './imagenes/metodosdepago.png',
+    imageHeight: 50,
     confirmButtonText: 'Pagar',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',

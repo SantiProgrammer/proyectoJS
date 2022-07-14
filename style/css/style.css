@@ -45,10 +45,6 @@ h2 {
     margin: 20px;
   }
 }
-body.dark h2 {
-  color: #cecece;
-  text-shadow: 1px 1px 1px black;
-}
 
 /** Keyframes **/
 @keyframes menubarside {
@@ -658,7 +654,7 @@ button {
   justify-content: space-around;
 }
 .botonCarrito .pagar {
-  border: 2px solid rgb(12, 32, 214);
+  border: 2px solid rgb(64, 77, 199);
   border-radius: 6px;
   font-size: 16px;
   text-align: center;
@@ -668,9 +664,13 @@ button {
   color: rgb(71, 71, 71);
   font-weight: bold;
 }
+body.dark .botonCarrito .pagar {
+  background-color: #373737;
+  color: rgb(187, 187, 187);
+}
 .botonCarrito .pagar:hover {
   background-color: rgb(12, 32, 214);
-  color: white;
+  color: rgb(187, 187, 187);
 }
 .botonCarrito .vaciar-carrito {
   border: 2px solid rgba(136, 136, 136, 0.37);
@@ -683,9 +683,32 @@ button {
   color: rgb(71, 71, 71);
   font-weight: bold;
 }
+body.dark .botonCarrito .vaciar-carrito {
+  background-color: #373737;
+  color: rgb(187, 187, 187);
+  border: 2px solid rgba(161, 72, 72, 0.37);
+}
 
 body.dark .card {
   background-color: #373737;
+}
+
+body.dark #carrito-wrapper .eliminar {
+  background-color: #302b63;
+  color: white;
+}
+
+body.dark #carrito-wrapper .card-detalle .card-title {
+  color: rgb(187, 187, 187);
+}
+
+body.dark #carrito-wrapper .card-detalle .card-text {
+  color: rgb(187, 187, 187);
+}
+
+body.dark .totalCarrito {
+  background-color: #373737;
+  color: rgb(187, 187, 187);
 }
 
 /** Tienda **/
@@ -787,6 +810,24 @@ body.dark .card {
   padding: 13px;
   margin: 0;
   cursor: pointer;
+}
+
+body.dark .card-title {
+  color: white;
+}
+
+body.dark .productos__card div .card .card-text {
+  color: white;
+}
+
+.productos__card div .card .btn:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+body.dark .productos__card div .card .btn {
+  background-color: #302b63;
+  color: white;
 }
 
 /* ------------------------------ fin tienda ----------------------------- */
