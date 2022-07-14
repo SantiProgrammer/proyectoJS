@@ -27,13 +27,26 @@
     font-size: 18px;
     margin: 3px;
     border-radius: 15px;
-        
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      
+    body.dark &{
+        background-color:rgb(32, 51, 51);
+        box-shadow: 1px 1px 1px $lightshadow;
+        color: white;
+    }
+
+
     }
     
     .boton:hover{
-        background-color: #373737;
+        background-color: $darkgrey;
         color: white;
         cursor: pointer ;
+
+        body.dark &{
+            background-color: rgb(37, 37, 37);
+
+        }
         
     }
     

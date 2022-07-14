@@ -34,6 +34,11 @@ z-index: 9999 !important;
     gap: 1em;
     grid-template-columns: 1fr 1fr;
 
+    body.dark &{
+        background-color: $darkgrey;
+        color: white; 
+    }
+
     .contacto-form {
         @include ubicacion (flex, flex-start, "", column);
 
@@ -43,6 +48,10 @@ z-index: 9999 !important;
             padding-top: 0.5em;
             color:black;
             text-align: center;
+
+            body.dark &{
+                color: white;
+            }
         }
 
         .form-row {

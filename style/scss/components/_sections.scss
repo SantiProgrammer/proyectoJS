@@ -3,7 +3,9 @@ section {
     background-size: cover;
     flex-direction: column;
     width: 100%;
+    transition: all .3s ease-in-out;
 }
+
 
 #index {
     background: #8E2DE2;
@@ -15,22 +17,42 @@ section {
     background-attachment: fixed;
     height: 100vh;
     min-height: 1000px;
+
+
+    body.dark &{
+
+        background: #0f0c29; 
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+
+    }
+
+    
 }
 
 #productos{
     background: #AAFFA9;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #11FFBD, #AAFFA9);
+    background: -webkit-linear-gradient(to bottom, rgb(79, 190, 255), rgb(170, 255, 169));
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #4fbeff, #AAFFA9);
+    background: linear-gradient(to bottom, rgb(79, 190, 255), rgb(170, 255, 169));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
     height: 100vh;
     min-height: 1000px;
+
+
+    body.dark &{
+        background: darken(rgb(170, 255, 169), 50%) ;
+        background: -webkit-linear-gradient(to bottom, darken(rgb(79, 190, 255), 50%), darken(rgb(170, 255, 169), 50%));
+        background: linear-gradient(to bottom, darken(rgb(79, 190, 255), 50%), darken(rgb(170, 255, 169), 70%));
+
+
+    }
   }
   
 
-  #simuladorInteractivo{
+#simuladorInteractivo{
     background: #8E2DE2;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #12c2e9, #c471ed, #f64f59);
@@ -40,7 +62,17 @@ section {
     background-attachment: fixed;
     height: 100vh;
     min-height: 1000px;
+    
+
+
+    body.dark &{
+        background: #8E2DE2;
+        background: -webkit-linear-gradient(to top, darken(rgb(18, 194, 233), 50%),darken(rgb(196, 113, 237),50%) ,darken(rgb(246, 79, 89),50%));
+        background: linear-gradient(to top, darken(rgb(18, 194, 233), 50%),darken(rgb(196, 113, 237),50%) ,darken(rgb(246, 79, 89),50%));
+    }
 }
+
+
 
 
 

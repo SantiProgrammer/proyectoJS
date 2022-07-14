@@ -35,8 +35,19 @@ openSesion.addEventListener("click", (e) => {
    <p class="botonLogin">${usuario.value.toUpperCase()}</p>`
 
    nombreLogeado.appendChild(bienvenido);
-   
+
+   if(botonInicio.classList.contains('login--borrar')){
+    localStorage.setItem('logeado', 'true');
+} 
   }
+
+
+  // Obtenemos el modo actual.
+
+if(localStorage.getItem('logeado') === 'true'){
+  botonInicio.classList.add('login--show"');
+}
+
 
 
 
@@ -54,5 +65,9 @@ openSesion.addEventListener("click", (e) => {
 
     }) 
    });
+
+
+
+
 
 

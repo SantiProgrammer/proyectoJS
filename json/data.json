@@ -9,7 +9,9 @@
     {"id":8 , "nombre": "Chocolate", "precio":30, "img": "./imagenes/barra-de-chocolate.png"  },
     {"id":9 , "nombre": "Pastel", "precio":290, "img": "./imagenes/cup-cake.png"  },
     {"id":10 , "nombre": "Pasta", "precio":110, "img": "./imagenes/spaguetti.png"  },
+    {"id":11 , "nombre": "Galletas", "precio":25, "img": "./imagenes/horneando.png"  },
     {"id":11 , "nombre": "Galletas", "precio":25, "img": "./imagenes/horneando.png"  }
+    
   ]
   
 

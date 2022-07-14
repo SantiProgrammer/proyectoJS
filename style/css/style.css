@@ -18,11 +18,18 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  transition: 1s ease all;
+}
+
 body {
   background: #8E2DE2;
   background-attachment: fixed;
   font-family: "Poppins", arial;
   color: rgb(255, 255, 255);
+}
+body.dark {
+  color: #cecece;
 }
 
 h2 {
@@ -32,13 +39,17 @@ h2 {
   font-size: 40px;
   animation: 0.6s arriba;
 }
-
 @media (min-width: 960px) {
   h2 {
     font-size: 100px;
     margin: 20px;
   }
 }
+body.dark h2 {
+  color: #cecece;
+  text-shadow: 1px 1px 1px black;
+}
+
 /** Keyframes **/
 @keyframes menubarside {
   from {
@@ -126,6 +137,54 @@ h1 {
 }
 
 /** Mapas **/
+/* Theme */
+.switch-wrapper {
+  position: fixed;
+  top: 65px;
+  left: 6px;
+}
+
+.switch {
+  background: #343D5B;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  transition: all 1s ease;
+}
+.switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 1s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.switch.active {
+  background: orange;
+  color: #000;
+}
+.switch.active::after {
+  right: 0px;
+  left: unset;
+}
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: #fff;
+}
+
 /* Componentes */
 section {
   display: flex;
@@ -134,6 +193,7 @@ section {
   background-size: cover;
   flex-direction: column;
   width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 #index {
@@ -147,17 +207,27 @@ section {
   height: 100vh;
   min-height: 1000px;
 }
+body.dark #index {
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
 
 #productos {
   background: #AAFFA9;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #11FFBD, #AAFFA9);
+  background: -webkit-linear-gradient(to bottom, rgb(79, 190, 255), rgb(170, 255, 169));
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4fbeff, #AAFFA9);
+  background: linear-gradient(to bottom, rgb(79, 190, 255), rgb(170, 255, 169));
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-attachment: fixed;
   height: 100vh;
   min-height: 1000px;
+}
+body.dark #productos {
+  background: #02a900;
+  background: -webkit-linear-gradient(to bottom, #00324f, #02a900);
+  background: linear-gradient(to bottom, #00324f, #014300);
 }
 
 #simuladorInteractivo {
@@ -171,12 +241,26 @@ section {
   height: 100vh;
   min-height: 1000px;
 }
+body.dark #simuladorInteractivo {
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to top, black, #3c0b54, #430307);
+  background: linear-gradient(to top, black, #3c0b54, #430307);
+}
 
 nav {
   width: 100%;
   font-family: monospace, arial;
   z-index: 99;
   top: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) !important;
+  transition: 1s ease all;
+}
+body.dark nav {
+  background: black !important;
+  box-shadow: 0 1px 1px rgba(119, 136, 153, 0.5) !important;
+}
+body.dark nav a {
+  color: #cecece !important;
 }
 
 a {
@@ -185,6 +269,9 @@ a {
 }
 a:hover {
   color: turquoise !important;
+}
+body.dark a:hover {
+  color: #aafff6 !important;
 }
 
 .menuSideBar {
@@ -447,6 +534,10 @@ h1 span {
   -ms-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
 }
+body.dark h1 span {
+  color: darkorange;
+  text-shadow: 1px 1px 1px black;
+}
 
 h1:hover span {
   color: #11FFBD;
@@ -465,6 +556,10 @@ h1:hover span {
   border-radius: 15px;
   margin: 15px;
   height: fit-content;
+}
+body.dark .my-canvas {
+  background-color: #373737;
+  color: white;
 }
 
 .offcanvas-body {
@@ -516,15 +611,24 @@ button {
 #carrito-wrapper .card-detalle {
   padding: 0em 1em;
 }
+#carrito-wrapper .card-detalle body.dark {
+  color: white !important;
+}
 #carrito-wrapper .card-detalle .card-title {
   font-weight: 700;
   color: black;
   border-bottom: 1px gray solid;
   text-align: start;
 }
+#carrito-wrapper .card-detalle .card-title body.dark {
+  color: white !important;
+}
 #carrito-wrapper .card-detalle .card-text {
   color: black;
   margin-bottom: 1px;
+}
+#carrito-wrapper .card-detalle .card-text body.dark {
+  color: white !important;
 }
 #carrito-wrapper .eliminar {
   align-self: center;
@@ -578,6 +682,10 @@ button {
   background-color: white;
   color: rgb(71, 71, 71);
   font-weight: bold;
+}
+
+body.dark .card {
+  background-color: #373737;
 }
 
 /** Tienda **/
@@ -716,6 +824,10 @@ button {
   gap: 1em;
   grid-template-columns: 1fr 1fr;
 }
+body.dark .login-container {
+  background-color: #373737;
+  color: white;
+}
 .login-container .contacto-form {
   display: flex;
   justify-content: flex-start;
@@ -728,6 +840,9 @@ button {
   padding-top: 0.5em;
   color: black;
   text-align: center;
+}
+body.dark .login-container .contacto-form .login-title {
+  color: white;
 }
 .login-container .contacto-form .form-row {
   display: flex;
@@ -806,12 +921,21 @@ button {
   font-size: 18px;
   margin: 3px;
   border-radius: 15px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+body.dark .boton {
+  background-color: rgb(32, 51, 51);
+  box-shadow: 1px 1px 1px rgba(119, 136, 153, 0.5);
+  color: white;
 }
 
 .boton:hover {
   background-color: #373737;
   color: white;
   cursor: pointer;
+}
+body.dark .boton:hover {
+  background-color: rgb(37, 37, 37);
 }
 
 .imgnew {

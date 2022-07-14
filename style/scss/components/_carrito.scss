@@ -10,6 +10,11 @@
     border-radius:15px;
     margin: 15px;
     height: fit-content;
+
+    body.dark &{
+      background-color: $darkgrey;
+      color: white;
+    }
 }
 
 .offcanvas-body{
@@ -67,17 +72,27 @@ background-color: rgba(128, 128, 128, 0.103);
  
     .card-detalle {
       padding: 0em 1em;
+      body.dark{
+        color: white !important;
+      }
  
       .card-title{ 
         font-weight: 700;
         color: black ;
         border-bottom: 1px gray solid;
         text-align: start;
+
+        body.dark{
+          color: white !important;
+        }
       }
  
       .card-text {
         color: black;
         margin-bottom: 1px;
+        body.dark{
+          color: white !important;
+        }
       }
     }
  
@@ -104,6 +119,7 @@ background-color: rgba(128, 128, 128, 0.103);
     background-color: white;
     color:rgb(71, 71, 71);
     font-weight: bold;
+    
   }
   
 
@@ -145,3 +161,9 @@ background-color: rgba(128, 128, 128, 0.103);
     }
   }
  
+
+  .card{
+    body.dark &{
+      background-color: $darkgrey;
+    }
+  }
