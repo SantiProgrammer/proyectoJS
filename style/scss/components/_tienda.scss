@@ -1,7 +1,6 @@
 /** Tienda **/
 
 .tienda-titulo{
-  margin-top: 100px;
   font-size: 80px;
 }
 
@@ -96,17 +95,6 @@
   }
 }
 
-.iniciar-sesion{
-position: absolute;
-left: 10px;
-}
-
-.iniciar-sesion p{
-  font-size: 12px;
-  padding: 13px;
-  margin: 0;
-  cursor: pointer;
-}
 
 .card-title{
   body.dark &{

@@ -16,7 +16,7 @@ section {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
     height: 100vh;
-    min-height: 1000px;
+    min-height: 300px;
 
 
     body.dark &{
@@ -38,8 +38,8 @@ section {
     background: linear-gradient(to bottom, rgb(79, 190, 255), rgb(170, 255, 169));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
-    height: 100vh;
-    min-height: 1000px;
+
+
 
 
     body.dark &{
@@ -48,6 +48,20 @@ section {
         background: linear-gradient(to bottom, darken(rgb(79, 190, 255), 50%), darken(rgb(170, 255, 169), 70%));
 
 
+    }
+  }
+
+  @media screen and (min-width:800px){
+    #productos{
+        height: 100vh;
+        min-height: 1000px;
+    }
+}
+
+  @media screen and (min-width:1024px){
+    #productos{
+        height: 100vh;
+        min-height: 900px;
     }
   }
   
@@ -61,7 +75,7 @@ section {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
     height: 100vh;
-    min-height: 1000px;
+    min-height: 750px;
     
 
 

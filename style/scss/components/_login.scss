@@ -33,6 +33,7 @@ z-index: 9999 !important;
     display: grid;
     gap: 1em;
     grid-template-columns: 1fr 1fr;
+    z-index: 999;
 
     body.dark &{
         background-color: $darkgrey;
@@ -105,5 +106,23 @@ z-index: 9999 !important;
   .login--borrar {
     display: none;
   }
+
+
+
+  .iniciar-sesion{
+    position: absolute;
+    left: 10px;
+    }
+    
+    .iniciar-sesion p{
+      font-size: 12px;
+      padding: 13px;
+      margin: 0;
+      cursor: pointer;
+
+      &:hover{
+        color: #aafff6 !important;
+      }
+    }
 
 /****************** fin login ******************/

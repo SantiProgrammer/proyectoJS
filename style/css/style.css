@@ -138,6 +138,7 @@ h1 {
   position: fixed;
   top: 65px;
   left: 6px;
+  z-index: 999;
 }
 
 .switch {
@@ -201,7 +202,7 @@ section {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-attachment: fixed;
   height: 100vh;
-  min-height: 1000px;
+  min-height: 300px;
 }
 body.dark #index {
   background: #0f0c29;
@@ -217,8 +218,6 @@ body.dark #index {
   background: linear-gradient(to bottom, rgb(79, 190, 255), rgb(170, 255, 169));
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-attachment: fixed;
-  height: 100vh;
-  min-height: 1000px;
 }
 body.dark #productos {
   background: #02a900;
@@ -226,6 +225,18 @@ body.dark #productos {
   background: linear-gradient(to bottom, #00324f, #014300);
 }
 
+@media screen and (min-width: 800px) {
+  #productos {
+    height: 100vh;
+    min-height: 1000px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #productos {
+    height: 100vh;
+    min-height: 900px;
+  }
+}
 #simuladorInteractivo {
   background: #8E2DE2;
   /* fallback for old browsers */
@@ -235,7 +246,7 @@ body.dark #productos {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-attachment: fixed;
   height: 100vh;
-  min-height: 1000px;
+  min-height: 750px;
 }
 body.dark #simuladorInteractivo {
   background: #8E2DE2;
@@ -713,7 +724,6 @@ body.dark .totalCarrito {
 
 /** Tienda **/
 .tienda-titulo {
-  margin-top: 100px;
   font-size: 80px;
 }
 
@@ -800,18 +810,6 @@ body.dark .totalCarrito {
   color: white;
 }
 
-.iniciar-sesion {
-  position: absolute;
-  left: 10px;
-}
-
-.iniciar-sesion p {
-  font-size: 12px;
-  padding: 13px;
-  margin: 0;
-  cursor: pointer;
-}
-
 body.dark .card-title {
   color: white;
 }
@@ -864,6 +862,7 @@ body.dark .productos__card div .card .btn {
   display: grid;
   gap: 1em;
   grid-template-columns: 1fr 1fr;
+  z-index: 999;
 }
 body.dark .login-container {
   background-color: #373737;
@@ -933,14 +932,24 @@ body.dark .login-container .contacto-form .login-title {
   display: none;
 }
 
-/****************** fin login ******************/
-.simulador-titulo {
-  margin-top: 100px;
-  font-size: 50px;
+.iniciar-sesion {
+  position: absolute;
+  left: 10px;
 }
 
-.botonesBox {
-  z-index: 9;
+.iniciar-sesion p {
+  font-size: 12px;
+  padding: 13px;
+  margin: 0;
+  cursor: pointer;
+}
+.iniciar-sesion p:hover {
+  color: #aafff6 !important;
+}
+
+/****************** fin login ******************/
+.simulador-titulo {
+  font-size: 50px;
 }
 
 .consigna {

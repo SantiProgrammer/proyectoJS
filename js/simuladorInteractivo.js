@@ -1,25 +1,28 @@
 /**  Simulador interactivo **/
 
-
-
 //Funcion Saludar al usuario
-
 const saludar = document.getElementById("saludo");
 saludar.addEventListener("click", respuestaClick)
 function respuestaClick(){
-    const nombre = prompt("Ingresa tu nombre");
-    const saludo = "Hola! " + nombre;
-    Swal.fire(
-    saludo,
-    'bonito dia! 😎',
-    'success'
-);
-    
+     
+    Swal.fire({
+    icon: 'success',
+    title: 'Ingresa tu nombre:',
+    input: 'text',
+    }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: 'success',
+            title: `Hola ${result.value}!`,
+            text:'bonito dia! 😎',
+          })
+        }
+      });
+
 }
 
 
 //Funcion promedio de calificaciones:
-
 const promedio = document.getElementById("promedioAlumno");
 promedio.addEventListener("mouseup", promedioAlumno)
 function promedioAlumno(){
@@ -37,7 +40,7 @@ function promedioAlumno(){
           })
     }else{
         Swal.fire({
-            icon: 'error',
+            icon: 'warning',
             title: 'Oops...',
             text: 'Reprobaste tu peromedio es menor a 6',
           })
@@ -46,7 +49,6 @@ function promedioAlumno(){
 
 
 //Funcion Calculadora con switch:
-
 const botonCalculadora = document.getElementById("botonCalculadora");
 botonCalculadora.addEventListener("click",calculadora)
 
@@ -71,12 +73,16 @@ function calculadora(primernum, segundonum, operacion) {
         let pregunta1 = Number(prompt("ingresa el primer numero"))
         let operadorMat = prompt("Ingresa el operador +,-,* ó /.")
         let pregunta2 = Number(prompt("ingresa el segundo numero"));
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Reprobaste tu peromedio es menor a 6',
+          })
         alert(calculadora(pregunta1,pregunta2,operadorMat))
     }
 
 
 //Funcion calculadora iva:
-
 const botonCalculadoraIva = document.getElementById("botonCalculadoraIva");
 botonCalculadoraIva.addEventListener("click", calculadoraIva)
 
@@ -93,24 +99,7 @@ function calculadoraIva(){
 }
 
 
-
-//Funcion carrito de compras:
-
-const botonCarrito = document.getElementById("botonCarrito");
-botonCarrito.addEventListener("click", agregarCarrito)
-
-function agregarCarrito(){
-    alert("Esta función muestra los 3 productos que argeges en la consola." )
-    for(i=1;i<=3;i++){
-        let producto = prompt("Ingresa el nombre del producto");
-        alert(producto + " agregado correctamente")
-        console.log("Los productos ingresados son: " + producto)
-    }
-    alert("abre la consola para ver los productos agregados")
-}
-
 //Funcion password:
-
 const botonCicloWhile = document.getElementById("botonCicloWhile");
 botonCicloWhile.addEventListener("click", cicloWhile)
 
@@ -130,7 +119,6 @@ Swal.fire({
 
 
 //Funcion do while:
-
 const botonDoWhile = document.getElementById("botonDoWhile");
 botonDoWhile.addEventListener("click", doWhile)
 
@@ -149,24 +137,28 @@ Swal.fire({
 
 
 //Funcion Arrays
-
 const botonArray = document.getElementById("botonArray");
 botonArray.addEventListener("click", array);
 
 function array(){
-    alert('Agrega 3 nombres al array')
-    const nombresArray = ["Nivardo","Maria Jose","Rene"];
+
+alert("Agrega 3 nombres a la lista:")
+    const nombresArray = [];
     for(i=1;i<=3;i++){
         let nuevoNombre = prompt("Ingresa el nombre");
         nombresArray.push(nuevoNombre)
         alert(nuevoNombre + " agregado correctamente")
     }
-    alert("Estos son los nombres agregados a la lista " + nombresArray + " un total de "+ nombresArray.length + " nombres")
+    Swal.fire({
+        icon: 'success',
+        title: 'Nombres en la lista:',
+        text: `${nombresArray } un total de ${nombresArray.length} nombres.`,
+      })
+   
 }
 
 
 //Array.filter
-
 const botonArrayFilter = document.getElementById("botonArrayFilter");
 botonArrayFilter.addEventListener("click", arrayFilter);
 
@@ -185,7 +177,14 @@ function arrayFilter(){
     
     let filtrados = productos.filter(el => el.precio < precio);
     console.log(filtrados);
-    alert("Se mostro precios menores a " + (precio) + " en la consola." );
+    alert(`Se mostro precios menores a ${precio}   en ${filtrados}` );
+    Swal.fire({
+        icon: 'success',
+        title: 'Se mostro precios menores a',
+        text: `${filtrados}`,
+      })
+   
+
 }
 
 const botonArrayFind = document.getElementById("botonArrayFind");
@@ -210,7 +209,6 @@ function arrayFind(){
 
 
 //botonDinamico()
-
 let botonDinamico = document.getElementById("botonDinamico");
 botonDinamico.addEventListener("click" ,cambiaColor)
 
@@ -235,7 +233,6 @@ function cambiaColor(){
 
 
 //eliminarBoton
-
 const botonEliminarBoton = document.getElementById("botonEliminarBoton");
 botonEliminarBoton.addEventListener("click" , eliminarBoton);
 
@@ -250,9 +247,7 @@ Swal.fire(
 }
 
 //agregarBoton
-
 const botonesBox = document.getElementById("botones-box");
-
 const botonAgregarBoton = document.getElementById("botonAgregarBoton");
 botonAgregarBoton.addEventListener("click" , agregarBoton);
 
@@ -271,6 +266,5 @@ function agregarBoton(){
 
 botonEliminarBoton.addEventListener("click" , eliminarBoton);
 
-
-
+/* Fin */
 

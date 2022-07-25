@@ -1,10 +1,12 @@
+/* Tema Dark */
+
 const btnSwitch = document.querySelector('#switch');
 
 btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     btnSwitch.classList.toggle('active');
 
-    // Guardamos el modo en LocalStorage,
+    /* Guardamos el modo en LocalStorage.setItem */
 
     if(document.body.classList.contains('dark')){
         localStorage.setItem('dark-mode', 'true');
@@ -15,7 +17,7 @@ btnSwitch.addEventListener('click', () => {
 );
 
 
-// Obtenemos el modo actual.
+/* Obtener el localStorage.getItem */
 
 if(localStorage.getItem('dark-mode') === 'true'){
     document.body.classList.add('dark');
@@ -25,3 +27,4 @@ if(localStorage.getItem('dark-mode') === 'true'){
     btnSwitch.classList.remove('active');
 }
 
+/* Fin */

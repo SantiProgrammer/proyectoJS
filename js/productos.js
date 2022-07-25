@@ -1,3 +1,4 @@
+/* Declaración de constructor objeto Producto */
 class Producto {
   constructor(producto) {
     this.id = producto.id;
@@ -14,6 +15,7 @@ class Producto {
   }
 }
 
+/* getElementByID */
 const productosWrapper = document.getElementById("productos-wrapper")
 const carritoWrapper = document.getElementById("carrito-wrapper")
 const productosCounter = document.getElementById("productosCounter")
@@ -22,19 +24,21 @@ const pagarTotal = document.getElementById('pagarTotal')
 const totalPrecioCarrito = document.getElementById('totalPrecioCarrito')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
-
+/* Array carrito */
 let carrito = [];
 
+/* LocalStorage.getItem */
 carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+/* Fetch renderiza productos de stock en el DOM */
 const printProductos = async () => {
-  const respuesta = await fetch("./json/data.json");
+  const respuesta = await fetch("./json/stock.json");
   const data = await respuesta.json();
   stockProductos = data;
   stockProductos.forEach((producto) => {
     let card = document.createElement("div");
     card.innerHTML = `
-         <figure class="card m-4">
+         <figure class="card m-2">
                <img src="${producto.img}" class="card-img-top" alt="${producto.nombre}">
                <p class="card-title">${producto.nombre} </p>
                <p class="card-text">$ ${producto.precio}</p>
@@ -50,9 +54,7 @@ const printProductos = async () => {
 
 printProductos()
 
-
-// Funcion argegar al carrito
-
+/*  Funcion argegar al carrito sumar producto */
 const agregarAlCarrito = (productoId) => {
   const item = carrito.find((producto) => producto.id === productoId);
   if (item) {
@@ -75,7 +77,7 @@ const agregarAlCarrito = (productoId) => {
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp'
       },
-      title: `${item.nombre}`,
+      title: `${item.nombre} sumado!`,
       imageUrl: `${item.img}`,
       imageHeight: 100,
       imageWidth: 100,
@@ -83,7 +85,7 @@ const agregarAlCarrito = (productoId) => {
       showConfirmButton: false,
       timer: 2000
     });
-
+/*  Funcion argegar al carrito por primera vez */
   } else {
     let newProducto = stockProductos.find((producto) => producto.id === productoId);
     carrito.push(new Producto(newProducto));
@@ -117,13 +119,13 @@ const deleteCart = (productoId) => {
   actualizarCarrito()
 }
 
+/*  Vaciar el array del carrito */
 vaciarCarrito.addEventListener('click', () => {
   carrito.length = 0
   actualizarCarrito()
 })
 
-// Funcion pagar carrito
-
+/*  Funcion pagar total del carrito*/
 pagarTotal.addEventListener('click', () => {
   Swal.fire({
     title: `Total a pagar : $${totalCarrito} `,
@@ -144,8 +146,7 @@ pagarTotal.addEventListener('click', () => {
   actualizarCarrito()
 })
 
-// Renderizar productos en carrito.
-
+/*  Renderizar productos en carrito */
 const actualizarCarrito = () => {
   carritoWrapper.innerHTML = "";
   if (carrito.length === 0) {
@@ -183,7 +184,8 @@ const actualizarCarrito = () => {
       })
     })
   }
-
+  
+  /* Guardar en localStorage.setItem el array del carrito */
   localStorage.setItem('carrito', JSON.stringify(carrito))
 
   productosCounter.innerText = carrito.length
@@ -193,3 +195,5 @@ const actualizarCarrito = () => {
 }
 
 actualizarCarrito()
+
+/* Fin */
