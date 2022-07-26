@@ -33,9 +33,9 @@ botonAcceder.addEventListener("click", () => {
   if ((usuario.toUpperCase() == "SANTIAGO") && (contraseña === "contraseña")) {
     usuarios.push("santiago");
     Swal.fire({
-      position: 'top-center',
       icon: 'success',
-      title: "Hola " + usuario.toUpperCase(),
+      title: `Acceso concedido!`,
+      text: `Bienvenido  ${usuario.toUpperCase()}`,
       showConfirmButton: false,
       timer: 2000
     });
