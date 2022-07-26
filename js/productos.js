@@ -124,7 +124,7 @@ vaciarCarrito.addEventListener('click', () => {
 const pagarTotal = document.getElementById('pagarTotal')
 pagarTotal.addEventListener('click', () => {
   Swal.fire({
-    title: `Total a pagar : $${totalCarrito} `,
+    title: `Total: $${totalCarrito} `,
     showClass: {
       popup: 'animate__animated animate__fadeInDown'
     },
