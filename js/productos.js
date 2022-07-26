@@ -15,13 +15,6 @@ class Producto {
   }
 }
 
-/* getElementByID */
-const productosWrapper = document.getElementById("productos-wrapper")
-const carritoWrapper = document.getElementById("carrito-wrapper")
-const productosCounter = document.getElementById("productosCounter")
-const vaciarCarrito = document.getElementById('vaciarCarrito')
-const pagarTotal = document.getElementById('pagarTotal')
-const totalPrecioCarrito = document.getElementById('totalPrecioCarrito')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
 /* Array carrito */
@@ -31,6 +24,7 @@ let carrito = [];
 carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 /* Fetch renderiza productos de stock en el DOM */
+const productosWrapper = document.getElementById("productos-wrapper")
 const printProductos = async () => {
   const respuesta = await fetch("./json/stock.json");
   const data = await respuesta.json();
@@ -120,12 +114,14 @@ const deleteCart = (productoId) => {
 }
 
 /*  Vaciar el array del carrito */
+const vaciarCarrito = document.getElementById('vaciarCarrito')
 vaciarCarrito.addEventListener('click', () => {
   carrito.length = 0
   actualizarCarrito()
 })
 
 /*  Funcion pagar total del carrito*/
+const pagarTotal = document.getElementById('pagarTotal')
 pagarTotal.addEventListener('click', () => {
   Swal.fire({
     title: `Total a pagar : $${totalCarrito} `,
@@ -147,6 +143,8 @@ pagarTotal.addEventListener('click', () => {
 })
 
 /*  Renderizar productos en carrito */
+
+const carritoWrapper = document.getElementById("carrito-wrapper")
 const actualizarCarrito = () => {
   carritoWrapper.innerHTML = "";
   if (carrito.length === 0) {
@@ -188,7 +186,14 @@ const actualizarCarrito = () => {
   /* Guardar en localStorage.setItem el array del carrito */
   localStorage.setItem('carrito', JSON.stringify(carrito))
 
+  const productosCounter = document.getElementById("productosCounter")
+
   productosCounter.innerText = carrito.length
+
+  
+ const totalPrecioCarrito = document.getElementById('totalPrecioCarrito')
+
+
 
   totalPrecioCarrito.innerText = carrito.reduce((total, elemento) => total + elemento.totalPrecio, 0);
   totalCarrito = carrito.reduce((total, elemento) => total + elemento.totalPrecio, 0);

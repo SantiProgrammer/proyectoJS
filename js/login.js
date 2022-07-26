@@ -1,21 +1,21 @@
 /* Inicio de sesion */
-const openSesion = document.querySelector("#inicio");
-const sesion = document.querySelector("#sesion")
-const closeSesion = document.querySelector("#close")
-const botonAcceder = document.getElementById("acceder")
-const nombreLogeado = document.getElementById("cambioLogeo")
-const botonInicio = document.getElementById("inicio")
-const cusuarioLocal = sessionStorage.getItem("usuarios")
+
+const saveSessionStorage = sessionStorage.getItem("usuarios");
 
 /* Mostrar y ocltar login */
-openSesion.addEventListener("click", (e) => {
+const login = document.querySelector("#inicio");
+const sesion = document.querySelector("#sesion");
+
+login.addEventListener("click", (e) => {
   e.preventDefault();
-  sesion.classList.add("login--show");
+  sesion.classList.add("display-login");
 });
 
-closeSesion.addEventListener("click", (e) => {
+const Logout = document.querySelector("#close");
+
+Logout.addEventListener("click", (e) => {
   e.preventDefault();
-  sesion.classList.remove("login--show");
+  sesion.classList.remove("display-login");
 });
 
 /* Array de usuarios */
@@ -26,7 +26,9 @@ usuarios = JSON.parse(sessionStorage.getItem("usuarios")) || [];
 
 /* Validacion de sesion */
 
-botonAcceder.addEventListener("click", () => {
+const Acceso = document.getElementById("acceder");
+
+Acceso.addEventListener("click", () => {
   let usuario = document.querySelector('#usuario').value;
   let contraseña = document.querySelector('#password').value;
 
@@ -63,12 +65,11 @@ const logout = () => {
     if (result.isConfirmed) {
       usuarios.shift()
       Swal.fire({
-        position: 'top-center',
         title: 'Logout',
         text: 'Successful',
         showConfirmButton: false,
         icon: 'success',
-        timer: 1000
+        timer: 1200
       });
       bienvenida()
       setTimeout(() => {
@@ -79,14 +80,18 @@ const logout = () => {
 }
 
 /* funcion de bienvenida y logeo exitoso */
+
+const sesionUsuario = document.getElementById("cambioDeUsuario");
+const botonInicio = document.getElementById("inicio");
+
 function bienvenida() {
   if (usuarios.length === 1) {
-    sesion.classList.remove("login--show");
-    botonInicio.classList.add("login--borrar");
+    sesion.classList.remove("display-login");
+    botonInicio.classList.add("hide-login");
     let bienvenido = document.createElement("div")
     bienvenido.innerHTML = `
    <p id="logout" class="botonLogin">${usuarios[0].toUpperCase()} | Cerrar Sesion</p>`
-    nombreLogeado.appendChild(bienvenido);
+    sesionUsuario.appendChild(bienvenido);
     const btnLogout = document.getElementById(`logout`)
     btnLogout.addEventListener('click', () => {
       logout()

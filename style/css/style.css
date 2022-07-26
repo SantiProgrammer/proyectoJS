@@ -38,12 +38,21 @@ h2 {
   margin: 10px;
   font-size: 40px;
   animation: 0.6s arriba;
+  text-align: center;
 }
-@media (min-width: 960px) {
+
+@media (min-width: 768px) {
   h2 {
-    font-size: 100px;
-    margin: 20px;
+    font-size: 50px;
   }
+}
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 60px;
+  }
+}
+h3 {
+  text-align: center;
 }
 
 /** Keyframes **/
@@ -225,12 +234,6 @@ body.dark #productos {
   background: linear-gradient(to bottom, #00324f, #014300);
 }
 
-@media screen and (min-width: 800px) {
-  #productos {
-    height: 100vh;
-    min-height: 1000px;
-  }
-}
 @media screen and (min-width: 1024px) {
   #productos {
     height: 100vh;
@@ -515,7 +518,7 @@ body.dark a:hover {
 
 /** Fin Color title**/
 h1 {
-  font-size: 50px;
+  font-size: 20px;
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: "Poppins", arial;
@@ -524,7 +527,7 @@ h1 {
 
 @media (min-width: 768px) {
   .frontEndTitle h1 {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 @media (min-width: 1024px) {
@@ -547,8 +550,8 @@ body.dark h1 span {
 }
 
 h1:hover span {
-  color: #11FFBD;
-  filter: drop-shadow(0 0 50px turquoise);
+  color: #11FFBD !important;
+  filter: drop-shadow(0 0 10px turquoise);
 }
 
 /* carrito */
@@ -723,10 +726,6 @@ body.dark .totalCarrito {
 }
 
 /** Tienda **/
-.tienda-titulo {
-  font-size: 80px;
-}
-
 .tit-productos {
   max-width: 1140px;
   margin: auto;
@@ -844,12 +843,6 @@ body.dark .productos__card div .card .btn {
   color: black;
 }
 
-.login--show {
-  opacity: 1;
-  pointer-events: unset;
-  transition: opacity 0.6s;
-}
-
 .login-container {
   background-color: white;
   width: 90%;
@@ -898,14 +891,6 @@ body.dark .login-container .contacto-form .login-title {
 .login-container .contacto-form .form-check {
   margin-bottom: 2em;
 }
-.login-container .contacto-form .login-btn {
-  color: white;
-  background-color: rgb(219, 206, 161);
-  padding: 0.8em 3em;
-  border-radius: 6px;
-  border: 1px solid white;
-  text-align: center;
-}
 .login-container .login-close {
   display: flex;
   justify-content: "";
@@ -922,13 +907,13 @@ body.dark .login-container .contacto-form .login-title {
   padding-top: 0.8em;
 }
 
-.login--show {
+.display-login {
   opacity: 1;
   pointer-events: unset;
   transition: opacity 0.6s;
 }
 
-.login--borrar {
+.hide-login {
   display: none;
 }
 
@@ -948,10 +933,6 @@ body.dark .login-container .contacto-form .login-title {
 }
 
 /****************** fin login ******************/
-.simulador-titulo {
-  font-size: 50px;
-}
-
 .consigna {
   font-size: 15px;
 }

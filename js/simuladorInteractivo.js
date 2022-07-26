@@ -158,56 +158,6 @@ alert("Agrega 3 nombres a la lista:")
 }
 
 
-//Array.filter
-const botonArrayFilter = document.getElementById("botonArrayFilter");
-botonArrayFilter.addEventListener("click", arrayFilter);
-
-function arrayFilter(){
-    alert("Busca precios entre 23 y 123234");
-    let precio = prompt("Buscar productos de precio menor a:");
-    let productos = [
-        {nombre: "Arroz", precio: 123},
-        {nombre: "Pan", precio: 1233},
-        {nombre: "Harina", precio: 1263},
-        {nombre: "Leche", precio: 23},
-        {nombre: "Cafe", precio: 123234},
-        ];
-
-    //filter ingresa el precio
-    
-    let filtrados = productos.filter(el => el.precio < precio);
-    console.log(filtrados);
-    alert(`Se mostro precios menores a ${precio}   en ${filtrados}` );
-    Swal.fire({
-        icon: 'success',
-        title: 'Se mostro precios menores a',
-        text: `${filtrados}`,
-      })
-   
-
-}
-
-const botonArrayFind = document.getElementById("botonArrayFind");
-botonArrayFind.addEventListener("click", arrayFind);
-
-//Array.find
-function arrayFind(){
-    let busqueda = prompt("Busca productos como: Arroz,Pan,Harina,Leche o Cafe.");
-    let productos = [
-        {nombre: "Arroz", precio: 123},
-        {nombre: "Pan", precio: 1233},
-        {nombre: "Harina", precio: 1263},
-        {nombre: "Leche", precio: 23},
-        {nombre: "Cafe", precio: 123234},
-        ];
-
-    //find "Pan"
-    let producto = productos.find(el => el.nombre === busqueda);
-    console.log(producto);
-    alert("Se mostro " + (busqueda) + " y su precio en la consola.")
-}
-
-
 //botonDinamico()
 let botonDinamico = document.getElementById("botonDinamico");
 botonDinamico.addEventListener("click" ,cambiaColor)
@@ -232,6 +182,25 @@ function cambiaColor(){
 }
 
 
+
+
+//agregarBoton
+const botonesBox = document.getElementById("botones-box");
+const botonAgregarBoton = document.getElementById("botonAgregarBoton");
+botonAgregarBoton.addEventListener("click" , agregarBoton);
+
+function agregarBoton(){
+    const boton = document.createElement("button");
+    boton.className = "boton";
+    boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
+    botonesBox.appendChild(boton);
+    Swal.fire({
+        icon: 'success',
+        title: 'Agregado',
+        text:'Boton agregado correctamente',
+      });
+}
+
 //eliminarBoton
 const botonEliminarBoton = document.getElementById("botonEliminarBoton");
 botonEliminarBoton.addEventListener("click" , eliminarBoton);
@@ -245,26 +214,5 @@ Swal.fire(
 );
 
 }
-
-//agregarBoton
-const botonesBox = document.getElementById("botones-box");
-const botonAgregarBoton = document.getElementById("botonAgregarBoton");
-botonAgregarBoton.addEventListener("click" , agregarBoton);
-
-function agregarBoton(){
-    const boton = document.createElement("button");
-    boton.className = "boton";
-    boton.setAttribute("id", "botonEliminarBoton")
-    boton.innerHTML = `Boton Nuevo <img class="imgnew" src="./imagenes/new.png" alt="imgnew">`;
-    botonesBox.appendChild(boton);
-    Swal.fire({
-        icon: 'success',
-        title: 'Agregado',
-        text:'Boton agregado correctamente',
-      });
-}
-
-botonEliminarBoton.addEventListener("click" , eliminarBoton);
-
 /* Fin */
 

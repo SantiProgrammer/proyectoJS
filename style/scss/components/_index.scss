@@ -184,7 +184,7 @@
 /** Fin Color title**/
 
 h1 {
-    font-size: 50px;
+    font-size: 20px;
     text-align: center;
     color: $font-color;
     font-family: 'Poppins', arial;
@@ -194,7 +194,7 @@ h1 {
 
 @media (min-width:768px) {
     .frontEndTitle h1 {
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 
@@ -203,6 +203,7 @@ h1 {
         font-size: 30px;
     }
 }
+
 
 h1 span {
     color: orange;
@@ -220,6 +221,6 @@ h1 span {
 }
 
 h1:hover span {
-    color: #11FFBD;
-    filter: drop-shadow(0 0 50px turquoise);
+    color: #11FFBD !important;
+    filter: drop-shadow(0 0 10px turquoise);
 }
