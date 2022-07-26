@@ -116,6 +116,13 @@
   }
 }
 
-
+.swal2-popup{
+  background-color: #fff;
+  body.dark &{
+    background-color: $darkgrey;
+    color: rgb(187, 187, 187);
+  }
+}
+ 
 
   /* ------------------------------ fin tienda ----------------------------- */
